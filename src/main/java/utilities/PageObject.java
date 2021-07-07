@@ -31,7 +31,7 @@ public class PageObject {
 	@AfterClass
 	public static void tearDown() throws Exception {
 		
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 		driver.close();
 		driver.quit();
 		prop.clear();
