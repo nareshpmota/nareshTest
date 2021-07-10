@@ -26,7 +26,7 @@ public class PageObject {
 	@BeforeClass
 	public static void startUp() throws Exception {
 		/*
-		 * This peace of  commented code is for executing the test cases on nodes
+		 * This peace of  commented code is for executing the test cases on nodess
 		 * 
 		 * 
 		 */
