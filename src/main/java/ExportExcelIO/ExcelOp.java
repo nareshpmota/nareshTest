@@ -22,7 +22,7 @@ public class ExcelOp extends PageObject {
     
     public ExcelOp() throws IOException {
     	login =new File(prop.getProperty("loginfilepath")+filename);
-    	System.out.println(prop.getProperty("loginfilepath")+filename);
+    	System.out.println(new File("resources/login.xlsx").getAbsolutePath());
     	finput = new FileInputStream(login);
     	book=new XSSFWorkbook(finput);
     	loginSheet=book.getSheet("Sheet1");

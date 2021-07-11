@@ -22,7 +22,8 @@ public class PageObject {
 	public static WebDriver driver;
 	public static Properties prop=new Properties();
 	public static FileInputStream objfile;
-	public static String nodeUrl = "http://192.168.0.102:5566/wd/hub";
+	public static String nodeUrl = "http://192.168.0.106:5566/wd/hub";
+	public static DesiredCapabilities capibilities;
 	@BeforeClass
 	public static void startUp() throws Exception {
 		/*
@@ -30,16 +31,16 @@ public class PageObject {
 		 * 
 		 * 
 		 */
-		/*DesiredCapabilities capibilities = DesiredCapabilities.firefox();
+		capibilities = DesiredCapabilities.firefox();
 		capibilities.setBrowserName("firefox");
 		capibilities.setVersion("89.0.1");
 		capibilities.setPlatform(Platform.LINUX);
 		capibilities.setCapability("marionette", true);
-		driver = new RemoteWebDriver(new URL(nodeUrl),capibilities);*/
+		driver = new RemoteWebDriver(new URL(nodeUrl),capibilities);
 		objfile = new FileInputStream(System.getProperty("user.dir")+"\\application.properties");
 		prop.load(objfile);
-		WebDriverManager.chromedriver().setup();
-		driver=new ChromeDriver();
+		//WebDriverManager.chromedriver().setup();
+	//	driver=new ChromeDriver();
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -47,9 +48,9 @@ public class PageObject {
 	
 	@AfterClass
 	public static void tearDown() throws Exception {
-		
+		//capibilities.wait(10000);
 		Thread.sleep(10000);
-		driver.close();
+		//driver.close();
 		driver.quit();
 		prop.clear();
 		objfile.close();
