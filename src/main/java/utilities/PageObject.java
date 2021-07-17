@@ -28,7 +28,7 @@ public class PageObject {
 	public static void startUp() throws Exception {
 		/*
 		 * This peace of  commented code is for executing the test cases on nodess
-		 * 
+		 * Author : Naresh Mota
 		 * 
 		 */
 		/*capibilities = DesiredCapabilities.firefox();
