@@ -14,7 +14,9 @@ public class HomePageElements {
 	
 	@FindBy(xpath="//span[normalize-space()='Login']")
 	private WebElement Submit;
-
+    @FindBy (xpath="//*[@class='portal-user-menu-button__username']")
+    private WebElement loginText;
+    
 	public WebElement getUsername() {
 		return username;
 	}
@@ -25,5 +27,8 @@ public class HomePageElements {
 
 	public WebElement getSubmit() {
 		return Submit;
+	}
+	public WebElement getResult() {
+		return loginText;
 	}
 }
