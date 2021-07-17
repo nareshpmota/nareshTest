@@ -37,6 +37,7 @@ public class PageObject {
 		capibilities.setPlatform(Platform.LINUX);
 		capibilities.setCapability("marionette", true);
 		driver = new RemoteWebDriver(new URL(nodeUrl),capibilities);*/
+		System.out.println("Change 2");
         System.out.println("This is Demo Project under Start up class");
 		objfile = new FileInputStream(System.getProperty("user.dir")+"\\application.properties");
 		prop.load(objfile);
