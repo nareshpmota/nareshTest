@@ -31,16 +31,16 @@ public class PageObject {
 		 * 
 		 * 
 		 */
-		capibilities = DesiredCapabilities.firefox();
+		/*capibilities = DesiredCapabilities.firefox();
 		capibilities.setBrowserName("firefox");
 		capibilities.setVersion("89.0.1");
 		capibilities.setPlatform(Platform.LINUX);
 		capibilities.setCapability("marionette", true);
-		driver = new RemoteWebDriver(new URL(nodeUrl),capibilities);
+		driver = new RemoteWebDriver(new URL(nodeUrl),capibilities);*/
 		objfile = new FileInputStream(System.getProperty("user.dir")+"\\application.properties");
 		prop.load(objfile);
-		//WebDriverManager.chromedriver().setup();
-	//	driver=new ChromeDriver();
+		WebDriverManager.chromedriver().setup();
+	    driver=new ChromeDriver();
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
