@@ -28,7 +28,7 @@ public class PageObject {
 	public static void startUp() throws Exception {
 		/*
 		 * This peace of  commented code is for executing the test cases on nodess
-		 * 
+		 * Author : Naresh Mota
 		 * 
 		 */
 		/*capibilities = DesiredCapabilities.firefox();
@@ -37,6 +37,7 @@ public class PageObject {
 		capibilities.setPlatform(Platform.LINUX);
 		capibilities.setCapability("marionette", true);
 		driver = new RemoteWebDriver(new URL(nodeUrl),capibilities);*/
+        System.out.println("This is Demo Project under Start up class");
 		objfile = new FileInputStream(System.getProperty("user.dir")+"\\application.properties");
 		prop.load(objfile);
 		WebDriverManager.chromedriver().setup();
