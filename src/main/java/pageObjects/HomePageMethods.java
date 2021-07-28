@@ -4,8 +4,11 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import ExportExcelIO.ExcelOp;
@@ -45,5 +48,13 @@ public HomePageElements hpElements;
     	  assertEquals("Fireadmin",this.hpElements.getResult().getText());
     	  return this;
       }
-
+      public HomePageMethods PrintAllLinks() throws InterruptedException {
+    	  Thread.sleep(5000);
+    	  List<WebElement> allLinks = driver.findElements(By.tagName("a"));
+    	  for(WebElement link : allLinks) {
+    		  System.out.println(link.getText());
+    		  // loop prints all links
+    	  }
+    	  return this;
+      }
 }

@@ -19,10 +19,12 @@ public class ExcelOp extends PageObject {
     public static Workbook book=null;
     public static Sheet loginSheet;
     public static Row row;
-    
+    public static String loginExcelFilePath=new String();
     public ExcelOp() throws IOException {
-    	login =new File(prop.getProperty("loginfilepath")+filename);
-    	System.out.println(new File("resources/login.xlsx").getAbsolutePath());
+    	
+    	loginExcelFilePath=System.getProperty("user.dir")+filename;
+    	login =new File(loginExcelFilePath);
+    	System.out.println(new File(loginExcelFilePath).getAbsolutePath());
     	finput = new FileInputStream(login);
     	book=new XSSFWorkbook(finput);
     	loginSheet=book.getSheet("Sheet1");
